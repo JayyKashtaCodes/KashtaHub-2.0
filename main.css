@@ -32,6 +32,7 @@
         background-color: #4B0082; /* Purple background */
         z-index: 1;
         overflow: visible;
+        border-radius: 0.2rem;
     }
 
     .navbar a {
@@ -41,11 +42,17 @@
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        border-radius: 0.5rem;
     }
 
     .navbar a:hover {
         background-color: purple; /* Hover effect for navigation links */
         color: white;
+    }
+
+    .breathanimation:hover {
+        border-radius: 0.5rem;
+        animation: neon-glow 2s infinite alternate; /* Breathing neon glow */
     }
 
     /* Dropdown Button Styling */
@@ -149,9 +156,26 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #2c1d33; /* Hover effect for scrollbar thumb */
     }
+
+    /* Neon Glow Animation */
+    @keyframes neon-glow {
+        0% {
+            box-shadow: 0 0 10px purple; /* Initial glow effect */
+            transform: scale(1); /* Normal size */
+            border-radius: 0.5rem; /* Rounded corners */
+        }
+        50% {
+            box-shadow: 0 0 20px purple; /* Intensified glow effect */
+            transform: scale(1.05); /* Slightly larger size */
+        }
+        100% {
+            box-shadow: 0 0 10px purple; /* Back to initial glow */
+            transform: scale(1); /* Normal size */
+        }
+    }
 }
 
 /* Responsive Styling for Smaller Screens (you can add rules here) */
 @media (max-width: 768px) {
-    
+
 }

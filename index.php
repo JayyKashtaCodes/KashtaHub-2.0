@@ -24,26 +24,25 @@
             Your browser does not support the video tag.
         </video>
         <div class="navbar">
-                <a href="./">Home</a>
+                <a class="breathanimation" href="./">Home</a>
                 <div class="dropdown">
                     <a class="dropbtn">Mods</a>
                     <div class="dropdown-content">
-                        <a href="#mod1">Mod 1</a>
-                        <a href="#mod2">Mod 2</a>
-                        <a href="#mod3">Mod 3</a>
-                        <a href="#mod4">Mod 4</a>
-                        <a href="#mod5">Mod 5</a>
-                        <a href="#mod6">Mod 6</a>
+                        <a class="breathanimation" href="#mod1">Mod 1</a>
+                        <a class="breathanimation" href="#mod2">Mod 2</a>
+                        <a class="breathanimation" href="#mod3">Mod 3</a>
+                        <a class="breathanimation" href="#mod4">Mod 4</a>
+                        <a class="breathanimation" href="#mod5">Mod 5</a>
+                        <a class="breathanimation" href="#mod6">Mod 6</a>
                     </div>
                 </div> 
                 <div class="dropdown">
                     <a class="dropbtn">Games</a>
                     <div class="dropdown-content">
-                        <a href="#game1">Game 1</a>
+                        <a class="breathanimation" href="#game1">Game 1</a>
                     </div>
                 </div>
-                <a href="#contact">Contact</a>
-                <a href="#placehold">placeholder</a>
+                <a class="breathanimation" href="./contact/">Contact</a>
                 <div class="languageList" id="google_translate_element"></div>
         </div>
         <div class="content">
