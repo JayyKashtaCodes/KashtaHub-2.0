@@ -1,6 +1,7 @@
+/* Font and General Styling */
 @media (min-width: 769px) {
     body {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Open Sans', sans-serif; /* Set font family */
     }
 
     body, html {
@@ -22,32 +23,32 @@
         height: 100%;
     }
 
-    /* Navigation Bar */
+    /* Navigation Bar Styling */
     .navbar {
-        position: absolute; /* Position the navbar absolutely */
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #4B0082; /* Royal Purple */
-        z-index: 1; /* Higher z-index to place navbar above video */
+        background-color: #4B0082; /* Purple background */
+        z-index: 1;
         overflow: visible;
     }
 
     .navbar a {
         float: left;
         display: block;
-        color: #f2f2f2;
+        color: #f2f2f2; /* Text color for navigation links */
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
     }
 
     .navbar a:hover {
-        background-color: purple; /* Midnight Purple */
+        background-color: purple; /* Hover effect for navigation links */
         color: white;
     }
 
-    /* Dropdown Button */
+    /* Dropdown Button Styling */
     .dropbtn {
         background-color: #4B0082;
         color: white;
@@ -61,28 +62,30 @@
     .dropdown {
         position: relative;
         display: inline-block;
+        margin: 0;
+        padding: 0;
+        border-radius: 0.5rem;
     }
 
     /* Dropdown Content (Hidden by Default) */
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: rgba(40, 1, 55, 0.95);
+        background-color: rgba(40, 1, 55, 0.95); /* Dark purple background */
         width: auto;
         height: auto;
         max-height: 6rem;
-        min-width: 5.8rem;
+        min-width: 7rem;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 999;
-        overflow: scroll;
+        overflow-y: scroll;
         top: 100%;
         left: 0;
         margin: 0;
-        padding: 0;
+        overflow-x: visible;
+        border-radius: 0.5rem;
     }
 
-
-    /* Links inside the dropdown */
     .dropdown-content a {
         color: black;
         padding: 12px 16px;
@@ -90,28 +93,25 @@
         display: block;
     }
 
-    /* Change color of dropdown links on hover */
     .dropdown-content a:hover {
-        background-color: purple;
+        background-color: purple; /* Hover effect for dropdown links */
     }
 
-    /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {
-        display: block;
+        display: block; /* Show dropdown content on hover */
     }
 
-    /* Change the background color of the dropdown button when the dropdown content is shown */
     .dropdown:hover .dropbtn {
-        background-color: purple;
+        background-color: purple; /* Hover effect for dropdown button */
     }
 
-
+    /* Main Content Styling */
     .content {
-        background: black;
+        background: black; /* Black background for main content area */
         z-index: 2;
     }
 
-
+    /* Language Selector Styling */
     .languageList {
         position: absolute;
         top: 0;
@@ -131,25 +131,27 @@
         display: none !important;
     }
 
-    /* Custom Scrollbar */
+    /* Custom Scrollbar Styling */
     ::-webkit-scrollbar {
-        width: 0.8rem;
+        width: 0.8rem; /* Set scrollbar width */
     }
 
     ::-webkit-scrollbar-track {
-        background: #f1f1f1;
+        background: #764f88; /* Scrollbar track background color */
+        border-radius: 0.5rem;
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #4B0082; /* Royal Purple */
-        border-radius: 0.4rem; /* Adjust the radius as desired */
+        background: #4B0082; /* Scrollbar thumb color */
+        border-radius: 0.4rem;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: #2c1d33; /* Midnight Purple */
+        background: #2c1d33; /* Hover effect for scrollbar thumb */
     }
 }
 
+/* Responsive Styling for Smaller Screens (you can add rules here) */
 @media (max-width: 768px) {
-
+    
 }
