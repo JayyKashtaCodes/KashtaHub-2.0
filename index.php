@@ -71,7 +71,7 @@
                 </div>
 
                 <a class="breathanimation" href="./contact/">Contact</a>
-                <a class="breathanimation" href="./kashtalauncher/">KashtaNewCPLauncher</a>
+                <a class="breathanimation" href="#placeholder">Placeholder</a>
 
                 <button onclick="togglePopup()">Show Audio</button>
 
