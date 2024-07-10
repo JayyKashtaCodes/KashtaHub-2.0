@@ -1,14 +1,26 @@
-<?php 
-    $audiosource = "http://allrelays.rainwave.cc/all.mp3";
+<?php
+    // Minify
+    require './_content/php/minifyCSS.php';
+    require './_content/php/minifyJS.php';
+
+    // Audio Player
+    $audiosource = "https://rainwave.cc/tune_in/5.mp3.m3u";
     $audioprov = parse_url($audiosource, PHP_URL_HOST);
     if ($audiosource == "http://allrelays.rainwave.cc/all.mp3") {
-        $audiotitle = "RainWave: All";
+        $audiotitle = "Rainwave: All";
+    } elseif ($audiosource == "https://rainwave.cc/tune_in/5.mp3.m3u") {
+        $audiotitle = "Rainwave: All";
     } else {
         $audiotitle = basename(parse_url($audiosource, PHP_URL_PATH));
     }
     if ($audioprov == "allrelays.rainwave.cc") {
         $audioprov = "rainwave.cc";
     }
+
+    // Display Errors
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>
@@ -16,26 +28,20 @@
     <head>
         <title>Your Website Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="main.css">
+
+        <link rel="stylesheet" type="text/css" href="./_content/css_min/main.min.css">
 
         <script>
             var audiosource = '<?php echo $audiosource; ?>';
         </script>
-
-        <link rel="preload" as="script" href="https://code.jquery.com/jquery-latest.min.js">
-        <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-        <link rel="preload" as="script" href="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-        <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js">
-        <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js">
-        <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.1/dist/jquery.validate.min.js">
-        <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js">
-        <link rel="preload" as="script" href="./_audio/jquery.playlist.js">
+        
+        <!-- Javascript Loading -->
+        <?php include './_content/php/preloadScripts.php'; ?>
 
         <link rel="preload" as="script" href="main.js">
 
-        <link rel="preload" as="script" href="./_audio/audiocontroller.js">
         <script>
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
@@ -73,7 +79,7 @@
                 <a class="breathanimation" href="./contact/">Contact</a>
                 <a class="breathanimation" href="#placeholder">Placeholder</a>
 
-                <button onclick="togglePopup()">Show Audio</button>
+                <button id="audioPlayerBtn" onclick="togglePopup()">Show Audio Player</button>
 
                 <div class="languageList" id="google_translate_element"></div>
         </div>
@@ -82,24 +88,15 @@
         </div>
 
         <div class="popup-container" id="audioPopup">
-            <h3 id="songName"><?php echo $audiotitle; ?></h3>
+            <div id="nowPlaying"><?php echo $audiotitle; ?></div>
             <audio id="myAudio" src="<?php echo $audiosource;?>"></audio>
             <input type="range" min="0" max="1" step="0.01" id="volume" onchange="setVolume()">
             <button id="playStopBtn" onclick="togglePlayStop()">▶️</button>
             <h5 class="audiocopy">Audio Provided by <?php echo $audioprov; ?></h5>
         </div>
         <!-- JQuery/Extras -->
-        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.1/dist/jquery.validate.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-        <script type="text/javascript" src="./_audio/jquery.playlist.js"></script>
+        <?php include './_content/php/scriptLoad.php'; ?>
         <!-- Main Scripting -->
         <script src="main.js"></script>
-        <!-- Audio Controllers -->
-        <script src="./_audio/audiocontroller.js"></script>
     </body>
 </html>

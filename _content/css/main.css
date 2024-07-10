@@ -121,8 +121,8 @@
     /* Language Selector Styling */
     .languageList {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 0.2rem;
+        right: 1rem;
     }
 
     .goog-logo-link {
@@ -138,6 +138,13 @@
         display: none !important;
     }
 
+    /* AudioPlayerButton */
+    .audioplayerbutton {
+        position: absolute;
+        top: 1.8rem;
+        right: 1.5rem;
+        z-index: 2;
+    }
     /* Custom Scrollbar Styling */
     ::-webkit-scrollbar {
         width: 0.8rem; /* Set scrollbar width */
