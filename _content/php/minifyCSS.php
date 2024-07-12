@@ -1,12 +1,8 @@
 <?php
 
-if (basename($_SERVER['PHP_SELF']) == 'index.php') {
-    $path = './_content/php';
-} elseif (basename($_SERVER['PHP_SELF']) == 'minifyCSS.php') {
-    $path = '.';
-} else {
-    $path = '.';
-}
+$root = $_SERVER['DOCUMENT_ROOT'];
+
+$path = $root . '/_content/php';
 
 require_once $path . '/minify/src/Minify.php';
 require_once $path . '/minify/src/CSS.php';
@@ -20,9 +16,9 @@ require_once $path . '/path-converter/src/Converter.php';
 
 use MatthiasMullie\Minify;
 
-$sourceDir = './_content/css/';
+$sourceDir = $root . '/_content/css/';
 
-$minifiedDir = './_content/css_min/';
+$minifiedDir = $root . '/_content/css_min/';
 
 if (!is_dir($minifiedDir)) {
     mkdir($minifiedDir, 0700);

@@ -1,5 +1,5 @@
 <?php 
-$scripts = [
+$prescripts = [
     [
         "url" => "https://code.jquery.com/jquery-latest.min.js",
         "priority" => 1
@@ -38,10 +38,10 @@ $scripts = [
     ]
 ];
 
-usort($scripts, function($a, $b) {
+usort($prescripts, function($a, $b) {
     return $a['priority'] - $b['priority'];
 });
 
-foreach ($scripts as $script) {
-    echo "<link rel='preload' as='script' href='{$script['url']}'>\n        ";
+foreach ($prescripts as $prescript) {
+    echo "<link rel='preload' as='script' href='{$prescript['url']}'>\n        ";
 }
